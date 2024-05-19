@@ -1,0 +1,10 @@
+from classes import Pessoa
+
+p1 = Pessoa("pou", 12, 15)
+print(f"nome: {p1.nome}\n"f"idade: {p1.idade} anos\n"f"peso: {p1.peso}kg")
+
+p1.comer("uva")
+p1.falar()
+p1.parardecomer()
+p1.falar()
+p1.dormir()
