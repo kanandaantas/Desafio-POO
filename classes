@@ -1,0 +1,58 @@
+class Pessoa():
+    def __init__(self,nome,idade,peso,comendo=False,falando=False,dormindo=False):
+        self.nome = nome
+        self.idade = idade
+        self.peso = peso
+        self.comendo = comendo
+        self.falando = falando
+        self.dormindo = dormindo
+
+    def comer(self, comida):
+        if self.dormindo or self.falando:
+            print(f"{self.nome} está ocupado e não pode comer ao mesmo tempo")
+            self.comendo = False
+        elif not self.comendo:
+            print(f"{self.nome} foi comer {comida}")
+            self.comendo = True
+        else:
+            print(f"{self.nome} já está comendo {comida}")
+
+    def parardecomer(self):
+        if self.comendo:
+            print(f"{self.nome} parou de comer")
+            self.comendo = False
+        else:
+            print(f"{self.nome} não estava comendo")
+
+    def falar(self):
+        if self.comendo or self.dormindo:
+            print(f"{self.nome} está ocupado e não pode falar ao mesmo tempo")
+            self.falando = False
+        elif not self.falando:
+            print(f"{self.nome} começou a falar")
+            self.falando = True
+        else:
+            print(f"{self.nome} já está falando")
+
+    def parardefalar(self):
+        if self.falando:
+            print(f"{self.nome} está em silêncio")
+            self.falando = False
+        else:
+            print(f"{self.nome} não está falando")
+
+    def dormir(self):
+        if self.falando or self.comendo:
+            print(f"{self.nome} está ocupado e não pode dormir ao mesmo tempo")
+            self.dormindo = False
+        elif not self.dormindo:
+            print(f"{self.nome} foi dormir")
+            self.dormindo = True
+        else:
+            print(f"{self.nome} já está dormindo")
+
+    def parardedormir(self):
+        if self.dormindo:
+            print(f"{self.nome} acordou")
+        else:
+            print(f"{self.nome} não está dormindo")
